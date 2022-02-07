@@ -1,6 +1,6 @@
 locals {
   name                 = "kube-state-metrics"
-  service_account_name = "${local.name}"
+  service_account_name = local.name
   default_helm_config = {
     name        = local.name
     chart       = local.name

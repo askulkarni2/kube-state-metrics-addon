@@ -1,6 +1,7 @@
 locals {
   name                 = "kube-state-metrics"
   service_account_name = local.name
+
   default_helm_config = {
     name        = local.name
     chart       = local.name
@@ -20,6 +21,8 @@ locals {
     var.helm_config
   )
 
+  # Set serviceAccount.create to False explicity
+  # even if its set to true in customer provided values.yaml
   set_values = [
     {
       name  = "serviceAccount.name"
@@ -31,6 +34,7 @@ locals {
     }
   ]
 
+  # An IRSA config must be passed
   irsa_config = {
     kubernetes_namespace              = local.name
     kubernetes_service_account        = local.service_account_name
@@ -42,6 +46,9 @@ locals {
     irsa_iam_policies                 = []
   }
 
+  # If you would like customers to be able to use GitOps via ArgoCD
+  # open a PR in the https://github.com/aws-samples/ssp-eks-add-ons/
+  # repo in order to create an ArgoCD application for your addon.
   argocd_gitops_config = {
     enable             = true
     serviceAccountName = local.service_account_name

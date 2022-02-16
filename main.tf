@@ -1,3 +1,10 @@
+####
+# Add your custom resources here...
+# such as IRSA policy statement
+####
+
+# Invokes the generic helm-addon module which is a convenience module
+# EKS Blueprints framework provides to create helm based addons easily
 module "helm_addon" {
   source            = "github.com/aws-samples/aws-eks-accelerator-for-terraform//modules/kubernetes-addons/helm-addon"
   manage_via_gitops = var.manage_via_gitops

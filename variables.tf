@@ -20,3 +20,15 @@ variable "tags" {
   description = "Common Tags for AWS resources"
   default     = {}
 }
+
+variable "irsa_permissions_boundary" {
+  type = string
+  default = ""
+  description = "IAM Policy ARN for IRSA IAM role permissions boundary"
+}
+
+variable "irsa_policies" {
+  type = list(string)
+  default = []
+  description = "IAM policy ARNs for Kube State Metrics IRSA"
+}

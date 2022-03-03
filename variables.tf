@@ -11,13 +11,13 @@ variable "manage_via_gitops" {
 }
 
 variable "irsa_permissions_boundary" {
-  type = string
-  default = ""
+  type        = string
+  default     = ""
   description = "IAM Policy ARN for IRSA IAM role permissions boundary"
 }
 
 variable "irsa_policies" {
-  type = list(string)
-  default = []
+  type        = list(string)
+  default     = []
   description = "IAM policy ARNs for Kube State Metrics IRSA"
 }

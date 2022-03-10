@@ -2,9 +2,9 @@
 # others may benefit from it, your customers' module can use the following example to 
 # enable your module.
 module "kubernetes-addons" {
-  source = "github.com/askulkarni2/aws-eks-accelerator-for-terraform//modules/kubernetes-addons?ref=doc%2Fextension-guide"
+  source = "github.com/askulkarni2/aws-eks-accelerator-for-terraform//modules/kubernetes-addons?ref=v3.4.1"
 
-  eks_cluster_id               = var.eks_cluster_id
+  eks_cluster_id = var.eks_cluster_id
 
   # Add-ons
   enable_kube_state_metrics = true

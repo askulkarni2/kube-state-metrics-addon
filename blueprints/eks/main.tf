@@ -2,7 +2,7 @@
 # EKS Cluster and Managed Node Group
 #------------------------------------------
 module "aws-eks-accelerator-for-terraform" {
-  source = "github.com/aws-samples/aws-eks-accelerator-for-terraform"
+  source = "github.com/aws-samples/aws-eks-accelerator-for-terraform?ref=v3.4.1"
 
   tenant      = var.tenant
   environment = var.environment

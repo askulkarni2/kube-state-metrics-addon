@@ -6,7 +6,7 @@
 # Invokes the generic helm-addon module which is a convenience module
 # EKS Blueprints framework provides to create helm based addons easily
 module "helm_addon" {
-  source            = "github.com/aws-samples/aws-eks-accelerator-for-terraform//modules/kubernetes-addons/helm-addon"
+  source            = "github.com/aws-samples/aws-eks-accelerator-for-terraform//modules/kubernetes-addons/helm-addon?ref=v3.4.1"
   manage_via_gitops = var.manage_via_gitops
   set_values        = local.set_values
   helm_config       = local.helm_config
